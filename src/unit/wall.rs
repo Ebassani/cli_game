@@ -1,9 +1,10 @@
+use std::fmt::{Display, Formatter};
+use std::io::Write;
 use std::ops::Range;
-use rand::distributions::{Distribution, Standard};
-use rand::distributions::uniform::SampleUniform;
 use rand::prelude::ThreadRng;
 use rand::Rng;
 use crate::traits::{Point, Position};
+use crate::ui::draw::Draw;
 
 #[derive(Default)]
 pub struct Wall {
@@ -15,6 +16,12 @@ impl Wall {
         Wall {
             position: Point::new(x,y)
         }
+    }
+}
+
+impl Display for Wall {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        write!(f, "|")
     }
 }
 

@@ -1,13 +1,20 @@
+use std::fmt::{Display, Formatter};
 use std::ops::Range;
 use rand::prelude::ThreadRng;
 use rand::Rng;
 use crate::traits::{Point, Position};
-use crate::unit::Player;
 
 #[derive(Default)]
 pub struct Collectible {
     position: Point<u16>
 }
+
+impl Display for Collectible {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        write!(f, "*")
+    }
+}
+
 
 impl Position<u16> for Collectible {
     fn position(&self) -> Point<u16> {

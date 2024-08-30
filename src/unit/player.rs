@@ -1,3 +1,4 @@
+use std::fmt::{Display, Formatter};
 use std::ops::Range;
 use rand::prelude::ThreadRng;
 use rand::Rng;
@@ -8,6 +9,12 @@ pub struct Player {
     health: u8,
     speed: f64,
     position: Point<f64>
+}
+
+impl Display for Player {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        write!(f, "[]")
+    }
 }
 
 impl Player {

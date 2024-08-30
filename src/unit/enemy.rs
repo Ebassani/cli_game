@@ -1,3 +1,4 @@
+use std::fmt::{Display, Formatter};
 use std::ops::Range;
 use rand::prelude::ThreadRng;
 use rand::Rng;
@@ -7,6 +8,12 @@ use crate::traits::{Point, Position};
 pub struct Enemy{
     speed: f64,
     position: Point<f64>
+}
+
+impl Display for Enemy {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        write!(f, "M")
+    }
 }
 
 impl Position<f64> for Enemy {
