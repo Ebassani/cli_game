@@ -4,7 +4,6 @@ use std::ops::Range;
 use rand::prelude::ThreadRng;
 use rand::Rng;
 use crate::traits::{Point, Position};
-use crate::ui::draw::Draw;
 
 #[derive(Default)]
 pub struct Wall {
@@ -21,7 +20,7 @@ impl Wall {
 
 impl Display for Wall {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        write!(f, "|")
+        write!(f, "█")
     }
 }
 
